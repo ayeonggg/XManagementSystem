@@ -18,15 +18,15 @@ public class MenuManager {
 		switch(num) {
 		case 1:
 		//if(num==1) {
-			System.out.print("Student Id:");
-			int studentId= input.nextInt();
-			System.out.print("Student Name:");
-			String studentName=input.next();
+			System.out.print("Site Address:");
+			int siteAddress= input.nextInt();
+			System.out.print("Site Name:");
+			String siteName=input.next();
 			break;
 		case 2:
 		case 3:
 		case 4:
-			System.out.print("Student Id:");
+			System.out.print("site Address:");
 			int studentId2=input.nextInt();
 		}
 		}

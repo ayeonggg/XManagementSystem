@@ -17,9 +17,8 @@ public class MenuManager {
 		num=input.nextInt();
 		switch(num) {
 		case 1:
-		//if(num==1) {
 			System.out.print("Site Address:");
-			int siteAddress= input.nextInt();
+			String siteAddress= input.next();
 			System.out.print("Site Name:");
 			String siteName=input.next();
 			break;
@@ -27,9 +26,9 @@ public class MenuManager {
 		case 3:
 		case 4:
 			System.out.print("site Address:");
-			int studentId2=input.nextInt();
-		}
+			String siteAddress2=input.next();
+		
 		}
 	}
-			
+	}
 }

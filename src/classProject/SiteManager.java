@@ -1,24 +1,22 @@
+package classProject;
 
 
 import java.util.Scanner;
 
-import helloworld.Site;
-
 public class SiteManager {
 	Site site;
 	Scanner input;
-	
 	SiteManager(Scanner input){
 		this.input= input;
 	}
+	
 	public void addsite() {
 		site= new Site();
-
 		System.out.print("Site Address: ");
 		site.address= input.next();
-		System.out.print("Site name: ");
+		System.out.print("Site Name: ");
 		site.name= input.next();
-		System.out.print("folder: ");
+		System.out.print("Folder: ");
 		site.folder= input.next();
 		}
 	
@@ -30,7 +28,7 @@ public void deletesite() {
 			return;
 		}
 
-		if(site.address== siteaddress) {
+		if(site.address.equals (siteaddress)) {
 			site= null;
 			System.out.println("the site is deleted.");
 		}
@@ -39,7 +37,7 @@ public void deletesite() {
 	public  void editsite() {
 		System.out.print("Site Address: ");
 		String siteaddress= input.next();
-		if(site.address== siteaddress) {
+		if(site.address.equals (siteaddress)) {
 			System.out.println("the site to be edited is"+ siteaddress);
 		}
 	}
@@ -47,7 +45,7 @@ public void deletesite() {
 	public void viewsite() {
 		System.out.print("Site Address: ");
 		String siteaddress= input.next();
-		if(site.address== siteaddress) {
+		if(site.address.equals (siteaddress)) {
 			site.printInfo();
 		}
 	}

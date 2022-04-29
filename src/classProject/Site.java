@@ -10,12 +10,17 @@ public class Site {
 	public Site() {
 	}
 	
+	public Site(SiteKind kind) {
+		this.kind=kind;
+	}
+	
 	public Site(String name, String address) {
 		this.name= name;
 		this.address= address;
 
 	}
 	public Site(String name, String address, String folder) {
+		this.kind=kind;
 		this.name= name;
 		this.address=address;
 		this.folder= folder;
@@ -56,6 +61,23 @@ public class Site {
 
 	
 	public void printInfo() {
+		String skind="none";
+		switch(this.kind) {
+		case Chrome:
+			skind="Chorme";
+			break;
+		case MicrosoftEdge:
+			skind="Edge";
+			break;
+		case InternetExplorer:
+			skind="Explorer";
+			break;
+		case Safari:
+			skind="Safari";
+			break;
+		default:
+			
+		}
 		System.out.println("name: "+name+ "address: "+address+ "folder: "+folder);
 	}
 	

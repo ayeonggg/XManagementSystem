@@ -3,6 +3,6 @@ package classProject;
 public enum SiteKind {
 	Chrome,
 	MicrosoftEdge,
-	Explorer,
+	InternetExplorer,
 	Safari
 }

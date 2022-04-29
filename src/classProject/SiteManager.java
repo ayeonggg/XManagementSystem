@@ -15,18 +15,25 @@ public class SiteManager {
 		int kind=0;
 		Site site;
 		while (kind !=1 && kind !=2) {
-			System.out.print("1 for Chorm: ");
-			System.out.print("2 for Microsoft Edge: ");
-			System.out.print("Select num for Site Kind between 1 and 2: ");
+			System.out.println("1 for Chorme: ");
+			System.out.println("2 for Microsoft Edge: ");
+			System.out.println("3 for Internet Explorer: ");
+			System.out.print("Select num 1,2,or 3 for Site Kind:");
 		    kind= input.nextInt();
 			if (kind==1) {
-			    site= new Site();
+			    site= new Site(SiteKind.Chrome);
 			    site.getUserInput(input);
 			    sites.add(site);
 			    break;
 			}
 			else if (kind ==2) {
-				site= new MicrosoftEdgeSite();
+				site= new MicrosoftEdgeSite(SiteKind.MicrosoftEdge);
+				 site.getUserInput(input);
+				sites.add(site);
+				break;
+			}
+			else if (kind == 3) {
+				site= new InternetExplorerSite(SiteKind.InternetExplorer);
 				 site.getUserInput(input);
 				sites.add(site);
 				break;

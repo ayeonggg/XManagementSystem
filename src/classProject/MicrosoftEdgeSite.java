@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class MicrosoftEdgeSite extends Site {
 	
+	public MicrosoftEdgeSite(SiteKind kind) {
+		super(kind);
+	}
+	
 	public void getUserInput(Scanner input) {
 		System.out.print("Site Address: ");
 		String address= input.next();

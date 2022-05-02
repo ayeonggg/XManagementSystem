@@ -23,10 +23,10 @@ public class InternetExplorerSite extends Site {
 		char answer ='x';
 		while(answer !='y' && answer!= 'Y' && answer !='n' && answer != 'N')
 		{
-			System.out.print("Does site have a parent's site folder? (Y/N): ");
+			System.out.print("Does site have a program site folder? (Y/N): ");
 		    answer = input.next().charAt(0);
 			if(answer == 'y'||answer=='Y') {
-				System.out.print("parent's site folder: ");
+				System.out.print("program site folder: ");
 				String folder= input.next();  
 				this.setFolder(folder);
 				break;

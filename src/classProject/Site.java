@@ -95,4 +95,3 @@ public class Site {
 		this.setFolder(folder);
 	}
 }
-	

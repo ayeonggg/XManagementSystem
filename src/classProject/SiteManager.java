@@ -113,9 +113,7 @@ public void deletesite() {
 		for(int i=0; i<sites.size(); i++) {
 			sites.get(i).printInfo();
 		}
-//		if(site.address.equals (siteaddress)) {
-//			site.printInfo();
-//		}
+
 	}
 }
 	

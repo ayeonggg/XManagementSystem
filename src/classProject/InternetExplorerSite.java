@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class InternetExplorerSite extends Site {
 	
-	protected String parentfolder;
-	protected String parentaddress;
+	protected String programfolder;
+	protected String programaddress;
 	
 	public InternetExplorerSite(SiteKind kind) {
 		super(kind);
@@ -62,7 +62,7 @@ public class InternetExplorerSite extends Site {
 		default:
 			
 		}
-		System.out.println("name: "+name+ "address: "+address+ "folder: "+folder+ "parent's address: "+ address+ "parent's folder: "+folder);
+		System.out.println("name: "+name+ "address: "+address+ "folder: "+folder+ "program address: "+ address+ "program folder: "+folder);
 	}
 }
 		

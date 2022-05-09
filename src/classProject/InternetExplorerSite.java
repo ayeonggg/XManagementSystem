@@ -2,7 +2,7 @@ package classProject;
 
 import java.util.Scanner;
 
-public class InternetExplorerSite extends Site {
+public class InternetExplorerSite extends Site implements SiteInput {
 	
 	protected String programfolder;
 	protected String programaddress;

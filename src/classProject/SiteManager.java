@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SiteManager {
-	ArrayList<Site> sites= new ArrayList<Site>();
+	ArrayList<SiteInput> sites= new ArrayList<Site>();
 	Scanner input;
 	SiteManager(Scanner input){
 		this.input= input;
@@ -13,7 +13,7 @@ public class SiteManager {
 	
 	public void addsite() {
 		int kind=0;
-		Site site;
+		SiteInput siteInput;
 		while (kind !=1 && kind !=2) {
 			System.out.println("1 for Chorme: ");
 			System.out.println("2 for Microsoft Edge: ");
@@ -21,20 +21,20 @@ public class SiteManager {
 			System.out.print("Select num 1,2,or 3 for Site Kind:");
 		    kind= input.nextInt();
 			if (kind==1) {
-			    site= new Site(SiteKind.Chrome);
-			    site.getUserInput(input);
-			    sites.add(site);
+			    siteInput= new ChormeSite(SiteKind.Chrome);
+			    siteInput.getUserInput(input);
+			    sites.add(siteInput);
 			    break;
 			}
 			else if (kind ==2) {
-				site= new MicrosoftEdgeSite(SiteKind.MicrosoftEdge);
-				 site.getUserInput(input);
-				sites.add(site);
+				siteInput= new MicrosoftEdgeSite(SiteKind.MicrosoftEdge);
+				siteInput.getUserInput(input);
+				sites.add(siteInput);
 				break;
 			}
 			else if (kind == 3) {
-				site= new InternetExplorerSite(SiteKind.InternetExplorer);
-				 site.getUserInput(input);
+				siteInput= new InternetExplorerSite(SiteKind.InternetExplorer);
+				 siteInput.getUserInput(siteinput);
 				sites.add(site);
 				break;
 			}
@@ -70,8 +70,8 @@ public void deletesite() {
 		System.out.print("Site Address: ");
 		String siteaddress= input.next();
 		for(int i=0; i<sites.size(); i++) {
-			Site site=sites.get(i);
-			if(site.address.equals (siteaddress)) {
+			SiteInput siteInput=sites.get(i);
+			if(siteInput.address.equals (siteaddress)) {
 				int num=-1;
 				while(num!=5){
 					System.out.println("*** Student Mangement System Menu ***");
@@ -85,17 +85,17 @@ public void deletesite() {
 					if(num==1) {
 						System.out.print("Site address:");
 						String address=input.next();
-						site.setAddress(address);
+						siteInput.setAddress(address);
 					}
 					else if(num==2) {
 						System.out.print("Site name:");
 						String name=input.next();
-						site.setName(name);
+						siteInput.setName(name);
 					}
 					else if(num==3) {
 						System.out.print("Site folder:");
 						String folder=input.next(); 
-						site.setFolder(folder);
+						siteInput.setFolder(folder);
 					}
 					else {
 						continue;

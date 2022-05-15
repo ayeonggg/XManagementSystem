@@ -71,7 +71,7 @@ public void deletesite() {
 		String siteaddress= input.next();
 		for(int i=0; i<sites.size(); i++) {
 			SiteInput siteInput=sites.get(i);
-			if(siteInput.address.equals (siteaddress)) {
+			if(siteInput.getAddress().equals (siteaddress)) {
 				int num=-1;
 				while(num!=5){
 					System.out.println("*** Student Mangement System Menu ***");

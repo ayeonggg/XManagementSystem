@@ -9,14 +9,13 @@ public class MicrosoftEdgeSite extends Site {
 	}
 	
 	public void getUserInput(Scanner input) {
-		System.out.print("Site Address: ");
-		String address= input.next();
-		this.setAddress(address);
-		
-		System.out.print("Site Name: ");
-		String name= input.next();
-		this.setName(name);
-		
+		setSiteaddress(input);
+		setSitename(input);
+		setSitefolderwithYN(input);
+		setSitefolder(input);
+	}
+	
+	public void setSitefolderwithYN(Scanner input) {
 		char answer ='x';
 		while(answer !='y' && answer!= 'Y' && answer !='n' && answer != 'N')
 		{
@@ -26,7 +25,7 @@ public class MicrosoftEdgeSite extends Site {
 				System.out.print("Site folder: ");
 				String folder= input.next();
 				this.setFolder(folder);
-				break;
+				break; 
 			}
 			else if (answer=='n'||answer=='N') {
 				this.setFolder("");
@@ -35,25 +34,12 @@ public class MicrosoftEdgeSite extends Site {
 			else {
 			}
 		}
-		public void printInfo() {
-			String skind="none";
-			switch(this.kind) {
-			case Chrome:
-				skind="Chorme";
-				break;
-			case MicrosoftEdge:
-				skind="Edge";
-				break;
-			case InternetExplorer:
-				skind="Explorer";
-				break;
-			case Safari:
-				skind="Safari";
-				break;
-			default:
-				
-			}
+	}
+	
+	public void printInfo() {
+		String kind =getKindString();
 			System.out.println("name: "+name+ "address: "+address+ "folder: "+folder+ "program address: "+ address+ "program folder: "+folder);
 		}
 	}
+
 		

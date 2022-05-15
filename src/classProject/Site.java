@@ -2,7 +2,8 @@ package classProject;
 
 import java.util.Scanner;
 
-public abstract class Site {
+public abstract class Site implements SiteInput{
+	protected SiteKind kind SitKind.Chorme;
 	protected String name;
 	protected String address;
 	protected String folder;
@@ -58,7 +59,45 @@ public abstract class Site {
 	public void setFolder(String folder) {
 		this.folder = folder;
 	}
-
 	
-	public abstract void printInfo():
+	public abstract void printInfo();
+	
+	public void setSiteaddress(Scanner input) {
+		System.out.print("Site address:");
+		String address=input.next();
+		this.setAddress(address);
+	}
+	
+	public void setSitename( Scanner input) {
+		System.out.print("Site name:");
+		String name=input.next();
+		this.setName(name);
+	}
+	
+	public void setSitefolder( Scanner input) {
+		System.out.print("Site folder:");
+		String folder=input.next(); 
+		this.setFolder(folder);
+	}  
+	
+	public String getKindString() {
+		String skind="none";
+		switch(this.kind) {
+		case Chrome:
+			skind="Chorme";
+			break;
+		case MicrosoftEdge:
+			skind="Edge";
+			break;
+		case InternetExplorer:
+			skind="Explorer";
+			break;
+		case Safari:
+			skind="Safari";
+			break;
+		default:	
+		}
+		return skind;
+	}
+
 }

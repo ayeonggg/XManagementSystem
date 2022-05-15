@@ -1,5 +1,7 @@
 package classProject;
 
+import java.util.Scanner;
+
 public interface SiteInput {
 	
 	public String getAddress();
@@ -13,4 +15,10 @@ public interface SiteInput {
 	public void getUserInput(Scanner input);
 	
 	public void printInfo();
+	
+	public void setSiteaddress(Scanner input);
+	
+	public void setSitename(Scanner input);
+	
+	public void setSitefolder(Scanner input);
 }

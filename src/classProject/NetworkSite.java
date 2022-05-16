@@ -2,6 +2,8 @@ package classProject;
 
 import java.util.Scanner;
 
+import exception.FolderFormatException;
+
 public abstract class NetworkSite extends Site {
 	
 	public NetworkSite(SiteKind kind) {
@@ -9,11 +11,8 @@ public abstract class NetworkSite extends Site {
 	}
 
 	@Override
-	public abstract void getUserInput(Scanner input) {
-		// TODO Auto-generated method stub
-
-	}
-
+	public abstract void getUserInput(Scanner input);
+	 
 	@Override
 	public void printInfo() {
 		// TODO Auto-generated method stub
@@ -26,16 +25,21 @@ public abstract class NetworkSite extends Site {
 		{
 			System.out.print("Does site have a site folder? (Y/N): ");
 		    answer = input.next().charAt(0);
-			if(answer == 'y'||answer=='Y') {
-				setSitefolder(input);
-				break;
+		    try{
+				if(answer == 'y'||answer=='Y') {
+					setSitefolder(input);
+					break;
+				}
+				else if (answer=='n'||answer=='N') {
+					this.setFolder("");
+					break;
+				}
+				else {
+				}
 			}
-			else if (answer=='n'||answer=='N') {
-				this.setFolder("");
-				break;
-			}
-			else {
-			}
-	}
+		    catch(FolderFormatException e) {
+		    	System.out.print("Incorrect Folder Format. put the folder name contains Æú´õ");
+		    }
+		}
 	}
 }

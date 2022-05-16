@@ -2,6 +2,8 @@ package classProject;
 
 import java.util.Scanner;
 
+import exception.FolderFormatException;
+
 public class InternetExplorerSite extends NetworkSite {
 	
 	protected String programfolder;
@@ -15,27 +17,31 @@ public class InternetExplorerSite extends NetworkSite {
 		setSiteaddress(input);
 		setSitename(input);
 		setSitefolderwithYN(input);
-		setParentfolderwithYN(input);
+		setProgramfolderwithYN(input);
 		setSitefolder(input);
 	}
 	
-	public void setParentfolderwithYN(Scanner input) {
+	public void setProgramfolderwithYN(Scanner input) {
 		char answer ='x';
 		while(answer !='y' && answer!= 'Y' && answer !='n' && answer != 'N')
 		{
 			System.out.print("Does site have a program site folder? (Y/N): ");
 		    answer = input.next().charAt(0);
-			if(answer == 'y'||answer=='Y') {
-				setSitefolder(input);
-				break;
-			}
-			else if (answer=='n'||answer=='N') {
-				this.setFolder("");
-				break;
-			}
-			else {
-				
-			}
+		    try {
+				if(answer == 'y'||answer=='Y') {
+					setSitefolder(input);
+					break;
+				}
+				else if (answer=='n'||answer=='N') {
+					this.setFolder("");
+					break;
+				}
+				else {
+				}
+		    }
+			catch(FolderFormatException e) {
+				System.out.print("Incorrect Folder Format. put the folder name contains Æú´õ");
+				    }
 		}
 	}
 	public void printInfo() {

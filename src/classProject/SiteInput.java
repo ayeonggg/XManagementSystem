@@ -2,6 +2,8 @@ package classProject;
 
 import java.util.Scanner;
 
+import exception.FolderFormatException;
+
 public interface SiteInput {
 	
 	public String getAddress();
@@ -10,7 +12,7 @@ public interface SiteInput {
 	
 	public void setName(String name);
 	
-	public void setFolder(String floder);
+	public void setFolder(String floder) throws FolderFormatException;
 	
 	public void getUserInput(Scanner input);
 	

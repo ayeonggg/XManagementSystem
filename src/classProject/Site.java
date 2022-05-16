@@ -2,6 +2,8 @@ package classProject;
 
 import java.util.Scanner;
 
+import exception.FolderFormatException;
+
 public abstract class Site implements SiteInput{
 	protected SiteKind kind= SiteKind.Chrome;
 	protected String name;
@@ -20,14 +22,13 @@ public abstract class Site implements SiteInput{
 		this.address= address;
 
 	}
-	public Site(String name, String address, String folder) {
+	public Site(SiteKind kind, String name, String address, String folder) {
 		this.kind=kind;
 		this.name= name;
 		this.address=address;
 		this.folder= folder;
 	}
 	
-	protected SiteKind kind= SiteKind.Chrome;
 	public SiteKind getKind() {
 		return kind;
 	}
@@ -56,7 +57,11 @@ public abstract class Site implements SiteInput{
 		return folder;
 	}
 
-	public void setFolder(String folder) {
+	public void setFolder(String folder) throws FolderFormatException {
+		if(!folder.contains("폴더") && !folder.equals("")) {
+			throw new FolderFormatException();
+		}
+		
 		this.folder = folder;
 	}
 	
@@ -68,16 +73,24 @@ public abstract class Site implements SiteInput{
 		this.setAddress(address);
 	}
 	
-	public void setSitename( Scanner input) {
+	public void setSitename(Scanner input) {
 		System.out.print("Site name:");
 		String name=input.next();
 		this.setName(name);
 	}
 	
-	public void setSitefolder( Scanner input) {
+	public void setSitefolder(Scanner input) {
+		String folder= "";
+		while(!folder.contains ("폴더")) {
 		System.out.print("Site folder:");
-		String folder=input.next(); 
-		this.setFolder(folder);
+		folder=input.next(); 
+		try{
+			this.setFolder(folder);
+		}catch(FolderFormatException e) {
+			System.out.print("Incorrect Folder Format. put the folder name contains 폴더");
+			
+		}
+		}
 	}  
 	
 	public String getKindString() {

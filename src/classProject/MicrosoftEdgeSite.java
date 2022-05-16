@@ -2,6 +2,8 @@ package classProject;
 
 import java.util.Scanner;
 
+import exception.FolderFormatException;
+
 public class MicrosoftEdgeSite extends Site {
 	
 	public MicrosoftEdgeSite(SiteKind kind) {
@@ -21,19 +23,25 @@ public class MicrosoftEdgeSite extends Site {
 		{
 			System.out.print("Does site have an folder? (Y/N): ");
 		    answer = input.next().charAt(0);
-			if(answer == 'y'||answer=='Y') {
-				System.out.print("Site folder: ");
-				String folder= input.next();
-				this.setFolder(folder);
-				break; 
-			}
-			else if (answer=='n'||answer=='N') {
-				this.setFolder("");
-				break;
-			}
-			else {
-			}
+		    try {
+				if(answer == 'y'||answer=='Y') {
+					System.out.print("Site folder: ");
+					String folder= input.next();
+					this.setFolder(folder);
+					break; 
+				}
+				else if (answer=='n'||answer=='N') {
+					this.setFolder("");
+					break;
+				}
+				else {
+				}
+		    }
+		    catch(FolderFormatException e) {
+		    	System.out.println("Incorrect Folder Format. put the folder name contains Æú´õ");
+		    }
 		}
+		    
 	}
 	
 	public void printInfo() {

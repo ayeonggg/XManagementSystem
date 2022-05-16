@@ -3,7 +3,7 @@ package classProject;
 import java.util.Scanner;
 
 public abstract class Site implements SiteInput{
-	protected SiteKind kind SitKind.Chorme;
+	protected SiteKind kind= SiteKind.Chrome;
 	protected String name;
 	protected String address;
 	protected String folder;

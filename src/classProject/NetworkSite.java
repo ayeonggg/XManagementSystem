@@ -37,4 +37,5 @@ public abstract class NetworkSite extends Site {
 			else {
 			}
 	}
+	}
 }

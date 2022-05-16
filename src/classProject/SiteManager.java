@@ -2,6 +2,7 @@ package classProject;
 
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SiteManager {
@@ -14,14 +15,17 @@ public class SiteManager {
 	public void addsite() {
 		int kind=0;
 		SiteInput siteInput;
-		while (kind !=1 && kind !=2) {
+		
+		while (kind !=1 || kind >3) {
+			try {
+			System.out.println("go into add students ");
 			System.out.println("1 for Chorme: ");
 			System.out.println("2 for Microsoft Edge: ");
 			System.out.println("3 for Internet Explorer: ");
 			System.out.print("Select num 1,2,or 3 for Site Kind:");
 		    kind= input.nextInt();
 			if (kind==1) {
-			    siteInput= new ChormeSite(SiteKind.Chrome);
+			    siteInput= new ChromeSite(SiteKind.Chrome);
 			    siteInput.getUserInput(input);
 			    sites.add(siteInput);
 			    break;
@@ -40,6 +44,14 @@ public class SiteManager {
 			}
 			else {
 				System.out.println("Select num for Site Kind between 1 and 2");
+			}
+			}
+			catch(InputMismatchException e) {
+				System.out.println("Please put an integer between 1 and 3!:");
+				if(input.hasNext()) {
+					input.next();
+				}
+				kind=-1;
 			}
 		}
 	}

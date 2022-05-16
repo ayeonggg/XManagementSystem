@@ -1,4 +1,5 @@
 package classProject;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuManager {
@@ -8,9 +9,13 @@ public class MenuManager {
 		Scanner input= new Scanner(System.in);
 		SiteManager siteManager = new SiteManager(input);
 		
+		selectMenu(input, siteManager);
+	}
+	public static void selectMenu(Scanner input, SiteManager siteManager) {
 		int num=-1;
 		 
 		while(num!=5){
+			try {
 			showMenu();
 			num=input.nextInt();
 			switch(num) {
@@ -29,8 +34,18 @@ public class MenuManager {
 			default:
 				continue;
 			}
+			}
+			catch(InputMismatchException e) {
+				System.out.println("Please put an integer between 1 and 5!:");
+				if(input.hasNext()) {
+					input.next();
+				}
+				num=-1;
+				System.out.println(num);
+			}
 		}
 	}
+	
 	public static void showMenu() {
 		System.out.println("*** Student Mangement System Menu ***");
 		System.out.println("1. Add Site");

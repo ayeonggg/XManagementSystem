@@ -1,13 +1,17 @@
 package classProject;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class SiteManager {
+public class SiteManager implements Serializable{
+	
+	private static final long serialVersionUID=3685095473752321L;
+	
 	ArrayList<SiteInput> sites= new ArrayList<SiteInput>();
-	Scanner input;
+	transient Scanner input;
 	SiteManager(Scanner input){
 		this.input= input;
 	}

@@ -7,17 +7,23 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import gui.WindowFrame;
 import log.EventLogger;
 
 public class MenuManager {
 	static EventLogger Logger= new EventLogger("log.txt");
 	
 	public static void main(String[] args) {
+		
 		Scanner input= new Scanner(System.in);
 		SiteManager siteManager = getObject("sitemanager.ser");
 		if(siteManager==null) {
 			siteManager= new SiteManager(input);
 		}
+
+		
+		WindowFrame frame= new WindowFrame(siteManager);
 		selectMenu(input, siteManager);
 		putObject(siteManager,"sitemanager.ser");
 	}
@@ -109,7 +115,6 @@ public class MenuManager {
 				
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();	
 			
 			}

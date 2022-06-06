@@ -10,7 +10,11 @@ public interface SiteInput {
 	
 	public void setAddress(String address);
 	
+	public String getName();
+	
 	public void setName(String name);
+	
+	public String getFolder();
 	
 	public void setFolder(String floder) throws FolderFormatException;
 	

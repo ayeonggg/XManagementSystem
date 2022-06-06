@@ -6,9 +6,7 @@ import java.util.Scanner;
 import exception.FolderFormatException;
 
 public abstract class Site implements SiteInput, Serializable{
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 8876453294802354259L;
 	
 	protected SiteKind kind= SiteKind.Chrome;

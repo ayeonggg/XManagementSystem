@@ -121,6 +121,13 @@ public void deletesite() {
 		}
 	}
 	
+	public int size() {
+		return sites.size();
+	}
+	
+	public SiteInput get(int index) {
+		return (Site) sites.get(index);
+	}
 
 	public void showEditMenu() {
 		System.out.println("*** Student Mangement System Menu ***");

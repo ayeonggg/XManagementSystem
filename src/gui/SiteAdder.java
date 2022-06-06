@@ -8,9 +8,12 @@ import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
 
-public class SiteAdder extends JFrame{
+public class SiteAdder extends JPanel{
+	WindowFrame frame;
 	
-	public SiteAdder() {
+	public SiteAdder(WindowFrame frame) {
+		this.frame= frame;
+		
 		JPanel panel= new JPanel();
 		panel.setLayout(new SpringLayout());
  
@@ -37,10 +40,8 @@ public class SiteAdder extends JFrame{
 		
 		SpringUtilities.makeCompactGrid(panel, 3, 2, 6, 6, 6, 6);
 		
-		this.setSize(300, 300);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		this.setContentPane(panel);
+		this.add(panel);
 		this.setVisible(true);
 	}
 

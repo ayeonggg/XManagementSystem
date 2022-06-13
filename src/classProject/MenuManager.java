@@ -21,7 +21,9 @@ public class MenuManager {
 		if(siteManager==null) {
 			siteManager= new SiteManager(input);
 		}
-
+//		else {
+//			siteManager.setScanner(input);
+//		}
 		
 		WindowFrame frame= new WindowFrame(siteManager);
 		selectMenu(input, siteManager);
@@ -101,6 +103,7 @@ public class MenuManager {
 			
 			return siteManager;
 		}
+	
 	 public static void putObject(SiteManager siteManager, String filename) {
 			try{
 				FileOutputStream file= new FileOutputStream(filename);

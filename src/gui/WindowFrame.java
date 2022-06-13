@@ -6,26 +6,26 @@ import javax.swing.JPanel;
 import classProject.SiteManager;
 
 public class WindowFrame extends JFrame{
+	
 	SiteManager siteManager;
 	
-	MenuSelection menuselection;
+	MenuSelection menuSelection;
 	SiteAdder siteadder;
 	SiteViewer siteviewer;
 	
 	
-
 	public WindowFrame(SiteManager siteManager) {
 		this.setSize(500, 300);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("My Frame");
 		
 		this.siteManager= siteManager;
-		this.menuselection= new MenuSelection(this);
-		this.siteadder= new SiteAdder(this);
-		this.siteviewer= new SiteViewer(this, this.siteManager);
+		menuSelection= new MenuSelection(this);
+		siteadder= new SiteAdder(this, this.siteManager);
+		siteviewer= new SiteViewer(this, this.siteManager);
 		
 		
-		this.add(menuselection);
+		this.add(menuSelection);
 
 		this.setVisible(true);
 		
@@ -39,11 +39,11 @@ public class WindowFrame extends JFrame{
 	}
 	
 		public MenuSelection getMenuselection() {
-			return menuselection;
+			return menuSelection;
 		}
 
 		public void setMenuselection(MenuSelection menuselection) {
-			this.menuselection = menuselection;
+			this.menuSelection = menuselection;
 		}
 
 		public SiteAdder getSiteadder() {

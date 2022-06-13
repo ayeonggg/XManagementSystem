@@ -16,6 +16,21 @@ public class SiteManager implements Serializable{
 		this.input= input;
 	}
 	
+	public void setScanner(Scanner input) {
+		this.input=input;
+	}
+	
+	public void addSite(String address, String name, String folder) {
+		SiteInput siteInput= new ChromeSite(SiteKind.Chrome);
+	    siteInput.getUserInput(input);
+	    sites.add(siteInput);
+	}
+	
+	
+	public void addSite(SiteInput siteInput) {
+	    sites.add(siteInput);
+	}
+	
 	public void addsite() {
 		int kind=0;
 		SiteInput siteInput;

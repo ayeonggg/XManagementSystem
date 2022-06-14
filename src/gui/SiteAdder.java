@@ -22,6 +22,7 @@ public class SiteAdder extends JPanel{
 		this.siteManager= siteManager;
 		
 		JPanel panel= new JPanel();
+		JPanel panel2= new JPanel();
 		panel.setLayout(new SpringLayout()); 
 
 		JLabel labelAddress= new JLabel("Address: ", JLabel.TRAILING);
@@ -50,13 +51,14 @@ public class SiteAdder extends JPanel{
 		panel.add(labelFolder);
 		panel.add(fieldFolder);
 		
-		panel.add(saveButton);
-		panel.add(cancelButton);
+		panel2.add(saveButton);
+		panel2.add(cancelButton);
 		
 		SpringUtilities.makeCompactGrid(panel, 3, 2, 6, 6, 6, 6);
 		
 		
 		this.add(panel);
+		this.add(panel2);
 		this.setVisible(true);
 	}
 
